@@ -4,8 +4,11 @@ import com.cc.monitor.client.collect.sys.AbstractSysCollector;
 
 public class LinuxCollector extends AbstractSysCollector {
 
-    @Override
-    public void collect() {
+    public LinuxCollector(){
+
+    }
+
+    public void collect() throws Exception{
 
     }
 }

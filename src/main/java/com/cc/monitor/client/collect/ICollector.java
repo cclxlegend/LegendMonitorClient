@@ -2,7 +2,7 @@ package com.cc.monitor.client.collect;
 
 public interface ICollector {
 
-    public void collect();
+    public void collect() throws Exception;
 
     public int interval();
 

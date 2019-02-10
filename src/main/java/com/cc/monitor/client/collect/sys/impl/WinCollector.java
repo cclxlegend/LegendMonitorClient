@@ -4,8 +4,11 @@ import com.cc.monitor.client.collect.sys.AbstractSysCollector;
 
 public class WinCollector extends AbstractSysCollector {
 
-    @Override
-    public void collect() {
+    public WinCollector(){
+
+    }
+
+    public void collect() throws Exception{
 
     }
 }
