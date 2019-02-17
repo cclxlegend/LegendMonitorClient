@@ -1,5 +1,7 @@
 package com.cc.monitor.client.collect.vo;
 
+import com.cc.monitor.client.constants.LMCConstants;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,7 +29,7 @@ public class SysQuotas {
      */
 
     // 总内存 单位byte
-    private long mem_total_size;
+    private long mem_total;
     // 已消耗的内存
     private long mem_used;
 
@@ -35,62 +37,73 @@ public class SysQuotas {
      * Cpu指标
      */
     // Cpu使用比率
-    private long cpu_used;
+    private long cpu_used_persent;
 
     /**
      * 磁盘指标
      */
     // 磁盘总量 单位 byte
-    private long disk_total_size;
-    // 当前已消耗磁盘
+    private long disk_total;
+    // 当前已消耗磁盘 单位 byte
     private long disk_used;
 
-    /**
-     * 网络流量指标
-     */
-
-    // 网络最大支持流量 单位 byte
-    private long netflow_total_size;
-    // 当前流入总packet数量
-    private long netflow_packet_in;
-    // 当前流入总流量
-    private long netflow_byte_in;
-    // 当前流出总packet数量
-    private long netflow_packet_out;
-    // 当前流出总流量
-    private long netflow_byte_out;
-
-
     public void clear() {
-        this.mem_total_size = 0L;
+        this.mem_total = 0L;
         this.mem_used = 0L;
-        this.cpu_used = 0L;
-        this.disk_total_size = 0L;
+        this.cpu_used_persent =0L;
+        this.disk_total = 0L;
         this.disk_used = 0L;
-        this.netflow_total_size = 0L;
-        this.netflow_packet_in = 0L;
-        this.netflow_byte_in = 0L;
-        this.netflow_packet_out = 0L;
-        this.netflow_byte_out = 0L;
-
     }
 
     public Map<String, Object> generateParams() {
         Map<String, Object> params = new HashMap<>();
-        params.put("mem_total_size", this.mem_total_size);
+        params.put("device", LMCConstants.DEVICE_NAME);
+        params.put("mem_total", this.mem_total);
         params.put("mem_used", this.mem_used);
-        params.put("cpu_used", this.cpu_used);
-        params.put("disk_total_size", this.disk_total_size);
+        params.put("cpu_used_persent", this.cpu_used_persent);
+        params.put("disk_total", this.disk_total);
         params.put("disk_used", this.disk_used);
-        params.put("netflow_total_size", this.netflow_total_size);
-        params.put("netflow_packet_in", this.netflow_packet_in);
-        params.put("netflow_byte_in", this.netflow_byte_in);
-        params.put("netflow_packet_out", this.netflow_packet_out);
-        params.put("netflow_byte_out", this.netflow_byte_out);
         params.put("timestamp", System.currentTimeMillis());
-
         return params;
     }
 
+    public long getMem_total() {
+        return mem_total;
+    }
 
+    public void setMem_total(long mem_total) {
+        this.mem_total = mem_total;
+    }
+
+    public long getMem_used() {
+        return mem_used;
+    }
+
+    public void setMem_used(long mem_used) {
+        this.mem_used = mem_used;
+    }
+
+    public long getCpu_used_persent() {
+        return cpu_used_persent;
+    }
+
+    public void setCpu_used_persent(long cpu_used_persent) {
+        this.cpu_used_persent = cpu_used_persent;
+    }
+
+    public long getDisk_total() {
+        return disk_total;
+    }
+
+    public void setDisk_total(long disk_total) {
+        this.disk_total = disk_total;
+    }
+
+    public long getDisk_used() {
+        return disk_used;
+    }
+
+    public void setDisk_used(long disk_used) {
+        this.disk_used = disk_used;
+    }
 }
