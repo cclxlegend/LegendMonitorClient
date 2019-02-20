@@ -4,7 +4,7 @@ import java.net.InetAddress;
 
 public class IpUtil {
 
-    public static String getHostName(){
+    public static String getLocalHostName(){
         InetAddress inetAddress = null;
         try{
             inetAddress = InetAddress.getLocalHost();

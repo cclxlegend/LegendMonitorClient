@@ -1,7 +1,6 @@
 package com.cc.monitor.client.util;
 
 
-import com.cc.monitor.client.constants.LegendConnectionProps;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
@@ -19,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import static com.cc.monitor.client.constants.LMCConstants.CONN_TIMEOUT;
+import static com.cc.monitor.client.constants.LMCConstants.SOCKET_TIMEOUT;
 import static org.apache.http.impl.client.HttpClients.createDefault;
 
 
@@ -45,8 +46,8 @@ public class HttpClient {
             HttpPost httpPost = new HttpPost(url);
             RequestConfig requestConfig = RequestConfig
                     .custom()
-                    .setSocketTimeout(LegendConnectionProps.SOCKET_TIMEOUT)
-                    .setConnectTimeout(LegendConnectionProps.CONN_TIMEOUT)
+                    .setSocketTimeout(SOCKET_TIMEOUT)
+                    .setConnectTimeout(CONN_TIMEOUT)
                     .build();//设置请求和传输超时时间
 
             httpPost.setConfig(requestConfig);

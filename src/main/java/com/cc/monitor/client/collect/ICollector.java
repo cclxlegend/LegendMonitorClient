@@ -1,10 +1,10 @@
 package com.cc.monitor.client.collect;
 
+import java.util.Map;
+
 public interface ICollector {
 
-    public void collect() throws Exception;
-
-    public int interval();
+    public Map<String,Object> collect() throws Exception;
 
     public String key();
 
