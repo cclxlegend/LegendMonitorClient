@@ -8,18 +8,18 @@ import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-import static com.cc.monitor.client.constants.LMCConstants.SYS_URL;
+import static com.cc.monitor.client.constants.LMCConstants.JVM_MEMORY_URL;
 
-public class SysInfoJob extends AbstractReportor implements Job {
+public class JVMMemoryInfoJob extends AbstractReportor implements Job {
 
     @Autowired
-    @Qualifier("sysInfoCollector")
+    @Qualifier("jvmMemoryInfoCollector")
     public ICollector collector;
 
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
         try {
-            report(SYS_URL, collector.collect());
+            report(JVM_MEMORY_URL, collector.collect());
         } catch (Exception e) {
             e.printStackTrace();
         }

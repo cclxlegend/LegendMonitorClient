@@ -1,5 +1,6 @@
 package com.cc.monitor.client.collect.vo;
 
+import com.cc.monitor.client.annotation.QuotaParameter;
 import com.cc.monitor.client.collect.AbstractQuotas;
 
 public class SysQuotas extends AbstractQuotas {
@@ -9,26 +10,33 @@ public class SysQuotas extends AbstractQuotas {
      */
 
     // 总内存 单位byte
+    @QuotaParameter
     private long mem_total;
     // 已消耗的内存
+    @QuotaParameter
     private long mem_free;
     // 已交换的虚拟内存
+    @QuotaParameter
     private long mem_commited_vitual;
 
     /**
      * Cpu指标
      */
     // Cpu使用比率
+    @QuotaParameter
     private double cpu_load;
     // 当前进程占用CPU比率
+    @QuotaParameter
     private double process_cpu_load;
 
     /**
      * 磁盘指标
      */
     // 磁盘总量 单位 byte
+    @QuotaParameter
     private long disk_total;
     // 当前已消耗磁盘 单位 byte
+    @QuotaParameter
     private long disk_free;
 
     public long getMem_total() {

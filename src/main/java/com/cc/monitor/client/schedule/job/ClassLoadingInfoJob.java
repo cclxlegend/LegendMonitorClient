@@ -10,10 +10,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import static com.cc.monitor.client.constants.LMCConstants.SYS_URL;
 
-public class SysInfoJob extends AbstractReportor implements Job {
+public class ClassLoadingInfoJob extends AbstractReportor implements Job {
 
     @Autowired
-    @Qualifier("sysInfoCollector")
+    @Qualifier("classLoadingInfoCollector")
     public ICollector collector;
 
     @Override
@@ -23,5 +23,6 @@ public class SysInfoJob extends AbstractReportor implements Job {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 }

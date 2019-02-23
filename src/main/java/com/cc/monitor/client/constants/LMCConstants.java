@@ -30,4 +30,12 @@ public class LMCConstants {
     public static final String SYS_URL = LMC_BASE_URL + "/sys/all";
 
     public static final String HEARTBEAT_URL =LMC_BASE_URL + "/sys/heartbeat";
+
+    public static final String JVM_CLASSLOADING_URL = "/jvm/classloading";
+
+    public static final String JVM_GC_URL = "/jvm/gc";
+
+    public static final String JVM_MEMORY_URL = "/jvm/memory";
+
+    public static final String JVM_THREAD_URL = "/jvm/thread";
 }

@@ -33,7 +33,7 @@ public class HttpClient {
      * @return
      * @throws IOException
      */
-    public static String post(String url, Map<String, String> params) throws IOException {
+    public static String post(String url, Map<String, Object> params) throws IOException {
         if (StringUtils.isEmpty(url) || params == null || params.isEmpty()) {
             return "";
         }
@@ -54,8 +54,8 @@ public class HttpClient {
             httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
 
             List<BasicNameValuePair> basicNameValuePairs = new ArrayList<>();
-            for (Map.Entry<String, String> entity : params.entrySet()) {
-                basicNameValuePairs.add(new BasicNameValuePair(entity.getKey(), entity.getValue()));
+            for (Map.Entry<String, Object> entity : params.entrySet()) {
+                basicNameValuePairs.add(new BasicNameValuePair(entity.getKey(),String.valueOf(entity.getValue())));
             }
 
             UrlEncodedFormEntity urlEncodedFormEntity = new UrlEncodedFormEntity(basicNameValuePairs, Consts.UTF_8);
