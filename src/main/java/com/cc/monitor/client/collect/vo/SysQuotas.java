@@ -1,28 +1,8 @@
 package com.cc.monitor.client.collect.vo;
 
-import com.cc.monitor.client.constants.LMCConstants;
+import com.cc.monitor.client.collect.AbstractQuotas;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class SysQuotas {
-
-    private static SysQuotas quotas;
-
-    private SysQuotas() {
-
-    }
-
-    public static SysQuotas getInstance() {
-        if (quotas == null) {
-            synchronized (SysQuotas.class) {
-                if (quotas == null) {
-                    quotas = new SysQuotas();
-                }
-            }
-        }
-        return quotas;
-    }
+public class SysQuotas extends AbstractQuotas {
 
     /**
      * 内存指标
@@ -50,30 +30,6 @@ public class SysQuotas {
     private long disk_total;
     // 当前已消耗磁盘 单位 byte
     private long disk_free;
-
-    public void clear() {
-        this.mem_total = 0L;
-        this.mem_free = 0L;
-        this.mem_commited_vitual =0L;
-        this.cpu_load = 0L;
-        this.process_cpu_load = 0;
-        this.disk_total = 0L;
-        this.disk_free = 0L;
-    }
-
-    public Map<String, Object> generateParams() {
-        Map<String, Object> params = new HashMap<>();
-        params.put("device", LMCConstants.DEVICE_NAME);
-        params.put("mem_total", this.mem_total);
-        params.put("mem_free", this.mem_free);
-        params.put("mem_commited_vitual", this.mem_commited_vitual);
-        params.put("cpu_load", this.cpu_load);
-        params.put("process_cpu_load", this.process_cpu_load);
-        params.put("disk_total", this.disk_total);
-        params.put("disk_free", this.disk_free);
-        params.put("timestamp", System.currentTimeMillis());
-        return params;
-    }
 
     public long getMem_total() {
         return mem_total;

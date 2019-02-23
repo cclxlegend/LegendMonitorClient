@@ -1,6 +1,6 @@
 package com.cc.monitor.client.start;
 
-public class LegendMonitorSender {
+public class LegendMonitorClient {
 
     public static void start(){
 

@@ -31,9 +31,9 @@ public class LMCScheduler {
     public static void addJob(String jobName, String group, Class<Job> clazz, int interval) throws Exception{
         Trigger trigger = newTrigger().withIdentity("trigger-"+jobName, "group-"+jobName)
                 .startNow()
-                .withSchedule(simpleSchedule() //使用SimpleTrigger
-                        .withIntervalInSeconds(interval) //每隔一秒执行一次
-                        .repeatForever()) //一直执行，奔腾到老不停歇
+                .withSchedule(simpleSchedule()
+                        .withIntervalInSeconds(interval)
+                        .repeatForever())
                 .build();
         JobDetail job = newJob(clazz)
                 .withIdentity(jobName, jobName)

@@ -13,11 +13,17 @@ public class LMCConstants {
     // 采集上报心跳定时任务的执行间隔 （秒）
     public static final int HEARTBEAT_INTERVAL = 5;
 
+    public static final int YOUNG_GC = 0;
+
+    public static final int OLD_GC = 1;
+
     public static final String IP = IpUtil.getLocalIp();
 
-    public static final String DEVICE_NAME = LMCConfiguration.getString("device.name","unkownApp@"+IP);
+    public static final String DEVICE_NAME = LMCConfiguration.getString("device.name","unkownDevice@"+IP);
 
-    public static final String[] DIY_JOB_CLASS = LMCConfiguration.getString("diy.job.class", StringUtils.EMPTY).split(",");
+    public static final String APP_NAME = LMCConfiguration.getString("app.name","unkownApp");
+
+    public static final String[] REPORTOR_SCAN_PATH = LMCConfiguration.getString("reportor.scan.path", StringUtils.EMPTY).split(",");
 
     public static final String LMC_BASE_URL = LMCConfiguration.getString("lmc.url","localhost:8080");
 
