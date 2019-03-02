@@ -27,6 +27,6 @@ public @interface LMCReportor {
      * 延时调度,默认0
      * @return
      */
-    public int lazyFire() default 0;
+    public int delay() default 0;
 
 }

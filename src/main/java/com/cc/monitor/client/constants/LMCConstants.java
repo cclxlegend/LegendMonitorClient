@@ -21,6 +21,8 @@ public class LMCConstants {
 
     public static final String DEVICE_NAME = LMCConfiguration.getString("device.name","unkownDevice@"+IP);
 
+    public static final String DEVICE_KEY = LMCConfiguration.getString("device.key", StringUtils.EMPTY);
+
     public static final String APP_NAME = LMCConfiguration.getString("app.name","unkownApp");
 
     public static final String[] REPORTOR_SCAN_PATH = LMCConfiguration.getString("reportor.scan.path", StringUtils.EMPTY).split(",");
@@ -38,4 +40,8 @@ public class LMCConstants {
     public static final String JVM_MEMORY_URL = "/jvm/memory";
 
     public static final String JVM_THREAD_URL = "/jvm/thread";
+
+    public static final String BIZ_NORMAL_URL = "/biz/normal";
+
+    public static final String BIZ_ALARM_URL = "/biz/alarm";
 }
