@@ -2,6 +2,9 @@ package com.cc.monitor.client.collect;
 
 import com.cc.monitor.client.collect.vo.*;
 
+/**
+ * 指标工厂，待优化
+ */
 public final class QuotasFactory {
 
     private QuotasFactory(){
